@@ -31,6 +31,14 @@ type Query {
     thoughts(username: String): [Thought]
     thought(_id: ID!): Thought
   }
+type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email:String!, password: String!): Auth
+}
+type Auth {
+    token: ID!
+    user: User
+}
 `;
 // export the typeDefs
 module.exports = typeDefs;
